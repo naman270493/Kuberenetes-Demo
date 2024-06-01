@@ -1,0 +1,16 @@
+{
+  "name": "nagp_kubernetes",
+  "version": "1.0.0",
+  "description": "Api service to serve requests ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Naman Agrawal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.3"
+  }
+}
