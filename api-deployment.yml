@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: api
-          image: namanagrawal270493/nagp-api-service:latest
+          image: namanagrawal270493/nagp-api-service:v3
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
