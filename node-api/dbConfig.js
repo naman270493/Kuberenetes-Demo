@@ -1,9 +1,7 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('mydatabase', 'myuser', 'ZGIxMTIyMzM0NDU1', {
-    host: 'postgres-headless',
+const sequelize = new Sequelize('postgres://myuser:postgres@postgres-headless:5432/mydatabase', {
     dialect: 'postgres',
-    port: 5432
 });
 
 module.exports = sequelize;

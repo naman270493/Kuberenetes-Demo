@@ -10,16 +10,18 @@ app.get('/', (req, res) => {
 
 app.get('/users', async (req, res) => {
   try {
+    sequelize.sync().then(async () => {
       const users = await User.findAll();
       res.json(users);
+    });
   } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Internal Server Error' });
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-sequelize.sync().then(() => {
-  app.listen(port, () => {
-    console.log(`API service running on port ${port}`);
-  });
+
+app.listen(port, () => {
+  console.log("Updated Application is running now");
+  console.log(`API service running on port ${port}`);
 });

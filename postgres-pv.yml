@@ -7,8 +7,6 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  gcePersistentDisk:
-    pdName: postgres-disk
-    fsType: ext4
-  # hostPath:
-  #   path: "/data/postgres"
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "/data/postgres"
