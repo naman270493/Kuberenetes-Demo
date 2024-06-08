@@ -10,3 +10,5 @@ spec:
   gcePersistentDisk:
     pdName: postgres-disk
     fsType: ext4
+  # hostPath:
+  #   path: "/data/postgres"

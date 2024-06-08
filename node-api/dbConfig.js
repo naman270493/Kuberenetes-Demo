@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize(process.env.POSTGRES_DB, process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
-    host: 'postgres',
+const sequelize = new Sequelize('mydatabase', 'myuser', 'ZGIxMTIyMzM0NDU1', {
+    host: 'postgres-headless',
     dialect: 'postgres',
     port: 5432
 });

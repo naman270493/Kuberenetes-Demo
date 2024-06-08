@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: api
-          image: namanagrawal270493/nagp-api-service:v3
+          image: namanagrawal270493/nagp-api-service:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           env:
             - name: DB_NAME
               valueFrom:
@@ -29,11 +29,11 @@ spec:
                 configMapKeyRef:
                   name: api-config
                   key: DB_USER
-            - name: DB_HOST
+            - name: DATABASE_URL
               valueFrom:
                 configMapKeyRef:
                   name: api-config
-                  key: DB_HOST
+                  key: DATABASE_URL
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:

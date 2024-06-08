@@ -4,5 +4,5 @@ COPY package*.json ./
 RUN npm install
 # Copy the rest of the application code
 COPY . .
-EXPOSE 80
+EXPOSE 8080
 CMD ["node", "index.js"]

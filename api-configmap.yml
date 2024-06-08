@@ -5,4 +5,4 @@ metadata:
 data:
   DB_NAME: mydatabase
   DB_USER: myuser
-  DB_HOST: postgres
+  DATABASE_URL: postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres:5432/mydatabase

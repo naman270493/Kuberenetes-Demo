@@ -2,6 +2,7 @@ const express = require('express');
 const User = require('./userModel');
 const app = express();
 const port = 8080;
+const sequelize = require('./dbConfig');
 
 app.get('/', (req, res) => {
   res.send('NAGP Kuberenetes Demo');
@@ -17,6 +18,8 @@ app.get('/users', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`API service running on port ${port}`);
+sequelize.sync().then(() => {
+  app.listen(port, () => {
+    console.log(`API service running on port ${port}`);
+  });
 });
